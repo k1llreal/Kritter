@@ -24,6 +24,6 @@
 <img src="https://user-images.githubusercontent.com/90712664/169381666-8eaa0af9-d9b4-4dc1-b59d-33cadbe50e01.png" />
 <br>
 <div>Страница редактирования пользователей.</div>
-<img src="[https://user-images.githubusercontent.com/90712664/169381666-8eaa0af9-d9b4-4dc1-b59d-33cadbe50e01.png](https://user-images.githubusercontent.com/90712664/169382401-4d4a2983-792e-4dd4-aa0a-56c54805aade.png)" />
+<img src="https://user-images.githubusercontent.com/90712664/169382401-4d4a2983-792e-4dd4-aa0a-56c54805aade.png" />
 
 
