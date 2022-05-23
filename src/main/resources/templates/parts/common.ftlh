@@ -14,7 +14,7 @@
               crossorigin="anonymous">
     </head>
     <body>
-    <#include "navbar.ftlh">
+    <#include "header.ftlh">
     <div class="container mt-5">
         <#nested>
     </div>
