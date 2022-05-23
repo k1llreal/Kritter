@@ -1,5 +1,5 @@
 <#include "security.ftlh">
-<#import "login.ftlh" as l>
+<#import "log_reg_out.ftlh" as l>
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
