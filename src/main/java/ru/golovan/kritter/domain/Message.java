@@ -1,14 +1,22 @@
 package ru.golovan.kritter.domain;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Message {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+
+    @NotBlank(message = "Пожалуйста заполните поле с сообщением")
+    @Length(max = 2048, message = "Сообщение слишком длинное")
     private String text;
+    @Length(max = 255, message = "Сообщение с тегами слишком длинное")
     private String tag;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User author;
