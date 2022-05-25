@@ -66,7 +66,6 @@ public class MainController {
             model.mergeAttributes(errorsMap);
             model.addAttribute("message", message);
         } else {
-
             if (file != null && !file.getOriginalFilename().isEmpty()) {
                 File uploadDir = new File(uploadPath);
 

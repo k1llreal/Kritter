@@ -21,11 +21,11 @@ public class User implements UserDetails {
     @NotBlank(message = "Пароль не может быть пустым!")
     private String password;
 
-    // говорим Hibernate с помощью @Transient что не нужно получать и сохранять это поле в БД
-    @Transient
-    private String password2;
+    @NotBlank(message = "Фамилия не может быть пустой!")
     private String surname;
+    @NotBlank(message = "Имя не может быть пустым!")
     private String name;
+    @NotBlank(message = "Отчество не может быть пустым!")
     private String patronymic;
     private Date dateOfBirth;
 
@@ -157,11 +157,5 @@ public class User implements UserDetails {
         this.activationCode = activationCode;
     }
 
-    public String getPassword2() {
-        return password2;
-    }
 
-    public void setPassword2(String password2) {
-        this.password2 = password2;
-    }
 }

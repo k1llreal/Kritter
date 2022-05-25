@@ -33,6 +33,7 @@ public class UserController {
         model.addAttribute("user", user);
         //вывод списка ролей
         model.addAttribute("roles", Role.values());
+
         return "userEdit";
     }
 

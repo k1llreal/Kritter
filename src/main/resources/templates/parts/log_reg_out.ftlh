@@ -91,15 +91,39 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">ФИО :</label>
             <div class="col-sm-3">
-                <input type="text" name="surname"  value="<#if user??>${user.surname}</#if>" class="form-control" placeholder="Фамилия"/>
-                <input type="text" name="name" value="<#if user??>${user.name}</#if>" class="form-control" placeholder="Имя"/>
-                <input type="text" name="patronymic" value="<#if user??>${user.patronymic}</#if>" class="form-control" placeholder="Отчество (если есть)"/>
+                <input type="text" name="surname"  value="<#if user??>${user.surname}</#if>"
+                       class="form-control ${(surnameError??)?string('is-invalid', '')}" placeholder="Фамилия"/>
+                <#if surnameError??>
+                    <div class="invalid-feedback">
+                        ${surnameError}
+                    </div>
+                </#if>
+                <input type="text" name="name" value="<#if user??>${user.name}</#if>"
+                       class="form-control ${(nameError??)?string('is-invalid', '')}" placeholder="Имя"/>
+                <#if nameError??>
+                    <div class="invalid-feedback">
+                        ${nameError}
+                    </div>
+                </#if>
+                <input type="text" name="patronymic" value="<#if user??>${user.patronymic}</#if>"
+                       class="form-control ${(patronymicError??)?string('is-invalid', '')}" placeholder="Отчество"/>
+                <#if patronymicError??>
+                    <div class="invalid-feedback">
+                        ${patronymicError}
+                    </div>
+                </#if>
             </div>
         </div>
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Дата рождения :</label>
             <div class="col-sm-3">
-                <input type="date" id="date" name="dateOfBirth" class="form-control"/>
+                <input type="date" id="date" name="dateOfBirth"
+                       class="form-control ${(dateOfBirthError??)?string('is-invalid', '')}"/>
+                <#if dateOfBirthError??>
+                    <div class="invalid-feedback">
+                        ${dateOfBirthError}
+                    </div>
+                </#if>
             </div>
         </div>
         <!-- без этого скрытого токена POST форма не будет принята сервером -->
