@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 import ru.golovan.kritter.domain.Role;
 import ru.golovan.kritter.domain.User;
 import ru.golovan.kritter.repos.UserRepo;
@@ -58,7 +58,7 @@ public class UserService implements UserDetailsService {
     }
 
     private void sendMessage(User user) {
-        if (!StringUtils.isEmpty(user.getEmail())) {
+        if (!ObjectUtils.isEmpty(user.getEmail())) {
             String message = String.format(
                     "Привет, %s! \n" +
                             "Ты зарегистрировался в Kritter. Тебе нужно подтвердить почту, для этого перейди по ссылке: " +
@@ -141,7 +141,7 @@ public class UserService implements UserDetailsService {
             user.setDateOfBirth(dateOfBirth);
         }
 
-        if (!StringUtils.isEmpty(password)) {
+        if (!ObjectUtils.isEmpty(password)) {
             user.setPassword(passwordEncoder.encode(password));
         }
 

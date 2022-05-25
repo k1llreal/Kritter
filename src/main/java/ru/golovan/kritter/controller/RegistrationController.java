@@ -3,7 +3,7 @@ package ru.golovan.kritter.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +32,7 @@ public class RegistrationController {
             BindingResult bindingResult,
             Model model
     ) {
-        boolean isConfirmEmpty = StringUtils.isEmpty(passwordConfirm);
+        boolean isConfirmEmpty = ObjectUtils.isEmpty(passwordConfirm);
 
         if (user.getDateOfBirth() == null) {
             model.addAttribute("dateOfBirthError", "Дата рождения не может быть пустая");

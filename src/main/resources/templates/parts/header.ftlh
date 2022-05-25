@@ -4,7 +4,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Golovan Kritter</a>
+            <a class="navbar-brand" href="/"><h3>Golovan Kritter</h3></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,13 +26,12 @@
                     </#if>
                 </ul>
 
-                <div class="navbar-text mr-3">
-                    <#if name != "unknown">
-                        ${name}
-                    </#if>
-                </div>
                 <#if name != "unknown">
+                    <a class="nav-link" href="/user-messages/${currentUserId}">Мои записи</a>
                     <a class="nav-link" href="/user/profile">Профиль</a>
+                    <div class="navbar-text mr-3">
+                            ${name}
+                    </div>
                     <@l.logout/>
                 <#else>
                     <a href="http://localhost:8080/login" class="btn btn-primary"

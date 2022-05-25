@@ -31,3 +31,13 @@ input {
     color: #444444;
     font-size: 1rem;
 }
+
+.nav-link {
+    text-decoration: none;
+    color: #b0b0b0
+}
+
+.nav-link :hover {
+    text-decoration: none;
+    color: inherit;
+}
